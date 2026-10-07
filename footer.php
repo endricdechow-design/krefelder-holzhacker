@@ -27,8 +27,14 @@ $holzhacker_priv  = get_privacy_policy_url();
 				<a class="contact-line" href="tel:<?php echo esc_attr( $holzhacker_tel ); ?>"><?php echo holzhacker_icon( 'phone' ); // phpcs:ignore ?>
 					<span><?php echo esc_html( $holzhacker_b['phone_label'] ); ?></span>
 				</a>
+				<a class="contact-line" href="tel:<?php echo esc_attr( preg_replace( '/[^0-9+]/', '', $holzhacker_b['phone2'] ) ); ?>"><?php echo holzhacker_icon( 'phone' ); // phpcs:ignore ?>
+					<span><?php echo esc_html( $holzhacker_b['phone2_label'] ); ?></span>
+				</a>
 				<a class="contact-line" href="mailto:<?php echo esc_attr( antispambot( $holzhacker_b['email'] ) ); ?>"><?php echo holzhacker_icon( 'mail' ); // phpcs:ignore ?>
 					<span><?php echo esc_html( antispambot( $holzhacker_b['email'] ) ); ?></span>
+				</a>
+				<a class="contact-line" href="<?php echo esc_url( 'https://www.instagram.com/' . $holzhacker_b['instagram'] . '/' ); ?>" target="_blank" rel="noopener"><?php echo holzhacker_icon( 'insta' ); // phpcs:ignore ?>
+					<span>@<?php echo esc_html( $holzhacker_b['instagram'] ); ?></span>
 				</a>
 			</address>
 		</div>

@@ -24,27 +24,13 @@ $holzhacker_privacy = get_privacy_policy_url() ? get_privacy_policy_url() : home
 
 	<!-- ========== HERO ========== -->
 	<section id="home" class="hero" aria-labelledby="hero-title">
-		<div class="hero__bg" aria-hidden="true">
-			<?php
-			echo holzhacker_photo( // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-				'bild1',
-				'full',
-				array(
-					'class'         => 'hero__img',
-					'alt'           => '',
-					'loading'       => 'eager',
-					'fetchpriority' => 'high',
-					'sizes'         => '100vw',
-				)
-			);
-			?>
-		</div>
+		<div class="hero__bg" aria-hidden="true"></div>
 		<div class="container hero__content">
 			<p class="hero__eyebrow"><?php esc_html_e( 'Ihr Baumdienst in Krefeld & Umgebung', 'holzhacker' ); ?></p>
 			<h1 id="hero-title" class="hero__title">
-				Krefelder Holzhacker <span class="hero__title-sub">– Professionelle Baumpflege &amp; Fällung</span>
+				Klettern. Sägen. Fällen.
 			</h1>
-			<p class="hero__lead">Sicher, präzise und mit Leidenschaft für Bäume.</p>
+			<p class="hero__lead">Wir holen Bäume runter, wo kein Kran und kein Bagger hinkommt. Mit Seil, Köpfchen und Respekt vor allem, was grünt.</p>
 			<div class="hero__actions">
 				<a class="btn btn--accent btn--large" href="#kontakt">Kostenloses Angebot anfordern</a>
 				<a class="btn btn--ghost btn--large" href="#leistungen">Unsere Leistungen</a>
@@ -57,13 +43,12 @@ $holzhacker_privacy = get_privacy_policy_url() ? get_privacy_policy_url() : home
 		<div class="container about">
 			<div class="about__text">
 				<p class="section__eyebrow">Über uns</p>
-				<h2 id="about-title" class="section__title">Zwei Krefelder mit Leidenschaft für Bäume</h2>
-				<p class="lead">Wir sind Aaron und Peter aus Krefeld. Mit langjähriger Erfahrung, moderner Ausrüstung und Leidenschaft stehen wir Ihnen als verlässliche Partner zur Seite. Ihre grünen Begleiter sind bei uns in den besten Händen!</p>
-				<ul class="checklist">
-					<li>Persönliche Beratung vor Ort</li>
-					<li>Transparente Festpreise</li>
-					<li>Saubere Arbeit inkl. Entsorgung</li>
-				</ul>
+				<h2 id="about-title" class="section__title">Das Team</h2>
+				<p class="lead">Wir sind Fuhrmann &amp; Schrörs, zwei Baumpfleger aus Krefeld mit Kletterschein. Der Anfang ist gemacht, und er sieht ziemlich orange aus. Unterwegs sind wir mit Schutzausrüstung, Motorsäge und einem alten Unimog.</p>
+				<figure class="motto">
+					<blockquote class="motto__quote"><p>„Alles fest im Griff.“</p></blockquote>
+					<figcaption class="motto__caption">– Unser Motto am Seil</figcaption>
+				</figure>
 			</div>
 		</div>
 	</section>
@@ -73,31 +58,61 @@ $holzhacker_privacy = get_privacy_policy_url() ? get_privacy_policy_url() : home
 		<div class="container">
 			<header class="section__header">
 				<p class="section__eyebrow">Leistungen</p>
-				<h2 id="services-title" class="section__title">Was wir für Sie tun</h2>
+				<h2 id="services-title" class="section__title">Was wir machen</h2>
+				<p class="lead">Ein Baum muss weg oder braucht Pflege, aber keiner kommt ran? Genau dafür sind wir da.</p>
 			</header>
 
-			<div class="cards">
+			<div class="cards cards--4">
 				<article class="card">
-					<div class="card__icon"><?php echo holzhacker_icon( 'climb' ); // phpcs:ignore ?></div>
-					<h3 class="card__title">Klettern</h3>
-					<p class="card__subtitle">Seilklettertechnik</p>
-					<p>Mit moderner Seilklettertechnik erreichen wir jede Krone – schonend für Baum und Grundstück, auch dort, wo keine Hebebühne hinkommt.</p>
+					<div class="card__icon"><?php echo holzhacker_icon( 'tree' ); // phpcs:ignore ?></div>
+					<h3 class="card__title">Baumfällung</h3>
+					<p>Ob eng zwischen Häusern, im Garten oder am Hang: Wir klettern hoch und nehmen den Baum Stück für Stück ab. Sicher für Haus, Zaun und Beet.</p>
 				</article>
 
 				<article class="card">
 					<div class="card__icon"><?php echo holzhacker_icon( 'saw' ); // phpcs:ignore ?></div>
-					<h3 class="card__title">Sägen</h3>
-					<p class="card__subtitle">Fachgerechter Rückschnitt</p>
-					<p>Kronenpflege, Totholzentfernung und Lichtraumprofil: Wir schneiden nach anerkannten Regeln der Baumpflege – für gesunde, sichere Bäume.</p>
+					<h3 class="card__title">Baumpflege</h3>
+					<p>Kronenpflege, Totholz, Rückschnitt. Wir schneiden so, dass der Baum gesund bleibt und weiterwachsen kann.</p>
 				</article>
 
 				<article class="card">
-					<div class="card__icon"><?php echo holzhacker_icon( 'tree' ); // phpcs:ignore ?></div>
-					<h3 class="card__title">Fällen</h3>
-					<p class="card__subtitle">Sichere Gefahrenfällung</p>
-					<p>Ob Sturmschaden oder kranker Baum: Wir fällen kontrolliert und Stück für Stück – selbst auf engstem Raum zwischen Häusern und Leitungen.</p>
+					<div class="card__icon"><?php echo holzhacker_icon( 'climb' ); // phpcs:ignore ?></div>
+					<h3 class="card__title">Schwer zugänglich</h3>
+					<p>Wo Hubsteiger und Maschinen passen müssen, kommen wir mit Seil und Kletterausrüstung hin.</p>
+				</article>
+
+				<article class="card">
+					<div class="card__icon"><?php echo holzhacker_icon( 'alert' ); // phpcs:ignore ?></div>
+					<h3 class="card__title">Notfallfällung</h3>
+					<p>Sturmschaden, Bruchgefahr, Baum hängt schief? Ruf an, wir schauen schnell, was zu tun ist.</p>
 				</article>
 			</div>
+		</div>
+	</section>
+
+	<!-- ========== FÄLLEN MIT GEWISSEN ========== -->
+	<section id="gewissen" class="section section--light" aria-labelledby="ethics-title">
+		<div class="container">
+			<header class="section__header">
+				<p class="section__eyebrow">Unsere Haltung</p>
+				<h2 id="ethics-title" class="section__title">Fällen mit Gewissen</h2>
+				<p class="lead">Wir fällen nicht aus Spaß, sondern wenn es nötig ist. Und wir sagen dir ehrlich, wenn ein Baum noch eine Chance hat.</p>
+			</header>
+
+			<ul class="principles">
+				<li class="principle">
+					<h3 class="principle__title">Erhalten, wo es geht</h3>
+					<p>Pflegeschnitt statt Säge, wenn der Baum noch zu retten ist.</p>
+				</li>
+				<li class="principle">
+					<h3 class="principle__title">Schonend arbeiten</h3>
+					<p>Klettern statt Kran: weniger Schäden an Rasen, Beeten und Nachbarbäumen.</p>
+				</li>
+				<li class="principle">
+					<h3 class="principle__title">Ehrlich beraten</h3>
+					<p>Du bekommst eine klare Einschätzung, auch wenn die heißt: Lass ihn stehen.</p>
+				</li>
+			</ul>
 		</div>
 	</section>
 
@@ -176,13 +191,35 @@ $holzhacker_privacy = get_privacy_policy_url() ? get_privacy_policy_url() : home
 		<div class="container contact">
 			<div class="contact__intro">
 				<p class="section__eyebrow">Kontakt</p>
-				<h2 id="contact-title" class="section__title">Kostenloses Angebot anfordern</h2>
-				<p class="lead">Beschreiben Sie kurz Ihr Anliegen – am besten mit einem Foto. So können wir Ihnen schnell eine erste Einschätzung geben.</p>
+				<h2 id="contact-title" class="section__title">Melde dich</h2>
+				<p class="lead">Schick uns ein Foto vom Baum und kurz, was dich stört. Wir sagen dir, was möglich ist.</p>
+
+				<div class="emergency" role="note">
+					<?php echo holzhacker_icon( 'alert' ); // phpcs:ignore ?>
+					<div>
+						<p class="emergency__title">Baum in Not?</p>
+						<p class="emergency__text">Wenn es eilt, ruf einfach an. Wir melden uns so schnell wie möglich.</p>
+					</div>
+				</div>
+
 				<?php $holzhacker_b = holzhacker_business(); ?>
-				<a class="contact-line contact-line--big" href="tel:<?php echo esc_attr( preg_replace( '/[^0-9+]/', '', $holzhacker_b['phone'] ) ); ?>">
-					<?php echo holzhacker_icon( 'phone' ); // phpcs:ignore ?>
-					<span><?php echo esc_html( $holzhacker_b['phone_label'] ); ?></span>
-				</a>
+				<address class="contact-list">
+					<?php foreach ( array( 'phone', 'phone2' ) as $holzhacker_phone_key ) : ?>
+						<a class="contact-line contact-line--big" href="tel:<?php echo esc_attr( preg_replace( '/[^0-9+]/', '', $holzhacker_b[ $holzhacker_phone_key ] ) ); ?>">
+							<?php echo holzhacker_icon( 'phone' ); // phpcs:ignore ?>
+							<span><?php echo esc_html( $holzhacker_b[ $holzhacker_phone_key . '_label' ] ); ?></span>
+						</a>
+					<?php endforeach; ?>
+					<p class="contact-list__note">Telefon, WhatsApp-Foto nach Absprache</p>
+					<a class="contact-line" href="mailto:<?php echo esc_attr( antispambot( $holzhacker_b['email'] ) ); ?>">
+						<?php echo holzhacker_icon( 'mail' ); // phpcs:ignore ?>
+						<span><?php echo esc_html( antispambot( $holzhacker_b['email'] ) ); ?></span>
+					</a>
+					<a class="contact-line" href="<?php echo esc_url( 'https://www.instagram.com/' . $holzhacker_b['instagram'] . '/' ); ?>" target="_blank" rel="noopener">
+						<?php echo holzhacker_icon( 'insta' ); // phpcs:ignore ?>
+						<span>@<?php echo esc_html( $holzhacker_b['instagram'] ); ?></span>
+					</a>
+				</address>
 			</div>
 
 			<form class="form" action="<?php echo esc_url( admin_url( 'admin-post.php' ) ); ?>" method="post" enctype="multipart/form-data">

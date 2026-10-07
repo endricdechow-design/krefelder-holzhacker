@@ -83,7 +83,7 @@
 	}
 
 	/* ---------- Reveal-Animation ---------- */
-	var revealTargets = document.querySelectorAll('.section__header, .about__text, .card, .cert, .gallery__item, .reviews, .contact__intro, .form');
+	var revealTargets = document.querySelectorAll('.section__header, .about__text, .card, .principle, .cert, .gallery__item, .reviews, .contact__intro, .form');
 
 	if ('IntersectionObserver' in window) {
 		var reveal = new IntersectionObserver(function (entries) {

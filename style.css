@@ -647,10 +647,7 @@ body.nav-open .site-nav {
 	isolation: isolate;
 }
 
-/*
- * Hero-Hintergrund: Foto (.hero__img) mit grünem Verlauf als Fallback,
- * solange das Bild lädt.
- */
+/* Hero-Hintergrund: dunkelgrüner Verlauf mit Baumsilhouetten */
 .hero__bg {
 	position: absolute;
 	inset: 0;
@@ -681,16 +678,6 @@ body.nav-open .site-nav {
 	height: 45%;
 	opacity: 0.55;
 	background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 120' preserveAspectRatio='none'%3E%3Cpath fill='%23142a1d' d='M0 120V80l15-30 15 30 10-50 12 50 18-40 14 40 10-60 14 60 16-35 12 35 14-55 14 55 12-30 10 30 16-45 14 45 12-60 14 60 14-35 12 35 16-50 14 50 10-30 14 30 12-45 14 45 16-25 10 25V120z'/%3E%3C/svg%3E") bottom / 100% 100% no-repeat;
-}
-
-.hero__img {
-	position: absolute;
-	inset: 0;
-	z-index: -1;
-	width: 100%;
-	height: 100%;
-	object-fit: cover;
-	object-position: center;
 }
 
 .hero__content {
@@ -782,6 +769,48 @@ body.nav-open .site-nav {
 	background: var(--c-forest) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23e2a03f' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 12 4 4 8-8'/%3E%3C/svg%3E") center / 70% no-repeat;
 }
 
+/* Motto-Kasten */
+.motto {
+	position: relative;
+	margin: 2rem auto 0;
+	padding: 1.75rem 1.5rem 1.5rem;
+	max-width: 32rem;
+	background: var(--c-forest);
+	border-radius: var(--radius-lg);
+	box-shadow: var(--shadow);
+}
+
+.motto::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 50%;
+	width: 3rem;
+	height: 4px;
+	background: var(--c-wood);
+	border-radius: 0 0 4px 4px;
+	transform: translateX(-50%);
+}
+
+.motto__quote {
+	margin: 0;
+}
+
+.motto__quote p {
+	margin: 0 0 0.35rem;
+	font-family: var(--ff-heading);
+	font-size: clamp(1.5rem, 1.2rem + 1.5vw, 2rem);
+	font-weight: 700;
+	letter-spacing: 0.02em;
+	text-transform: uppercase;
+	color: var(--c-white);
+}
+
+.motto__caption {
+	font-size: var(--fs-sm);
+	color: var(--c-wood);
+}
+
 /* ==========================================================================
    9. Leistungen
    ========================================================================== */
@@ -843,6 +872,80 @@ body.nav-open .site-nav {
 @media (min-width: 48em) {
 	.cards {
 		grid-template-columns: repeat(3, 1fr);
+	}
+
+	.cards--4 {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+@media (min-width: 64em) {
+	.cards--4 {
+		grid-template-columns: repeat(4, 1fr);
+	}
+}
+
+.section__header .lead {
+	margin: 1rem 0 0;
+}
+
+/* ==========================================================================
+   9b. Fällen mit Gewissen
+   ========================================================================== */
+
+.principles {
+	display: grid;
+	gap: 1.25rem;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	counter-reset: principle;
+}
+
+.principle {
+	position: relative;
+	padding: 1.75rem 1.5rem 1.5rem 4.75rem;
+	background: var(--c-white);
+	border: 1px solid var(--c-border);
+	border-radius: var(--radius-lg);
+	box-shadow: var(--shadow);
+	counter-increment: principle;
+}
+
+.principle::before {
+	content: counter(principle, decimal-leading-zero);
+	position: absolute;
+	top: 1.5rem;
+	left: 1.5rem;
+	font-family: var(--ff-heading);
+	font-size: 2rem;
+	font-weight: 700;
+	line-height: 1;
+	color: var(--c-wood);
+}
+
+.principle__title {
+	margin-bottom: 0.35em;
+	font-size: var(--fs-h3);
+}
+
+.principle p {
+	margin: 0;
+	color: var(--c-text-muted);
+}
+
+@media (min-width: 48em) {
+	.principles {
+		grid-template-columns: repeat(3, 1fr);
+	}
+
+	.principle {
+		padding: 4.5rem 1.75rem 1.75rem;
+	}
+
+	.principle::before {
+		top: 1.75rem;
+		left: 1.75rem;
 	}
 }
 
@@ -1045,10 +1148,58 @@ a.contact-line:hover {
 	color: var(--c-wood);
 }
 
+.emergency {
+	display: flex;
+	gap: 1rem;
+	align-items: flex-start;
+	margin: 1.5rem 0;
+	padding: 1.25rem;
+	background: var(--c-forest);
+	color: rgba(255, 255, 255, 0.88);
+	border-left: 4px solid var(--c-wood);
+	border-radius: var(--radius);
+}
+
+.emergency .icon {
+	width: 1.75rem;
+	height: 1.75rem;
+	color: var(--c-wood);
+}
+
+.emergency__title {
+	margin: 0 0 0.25rem;
+	font-family: var(--ff-heading);
+	font-size: 1.25rem;
+	font-weight: 700;
+	letter-spacing: 0.04em;
+	text-transform: uppercase;
+	color: var(--c-white);
+}
+
+.emergency__text {
+	margin: 0;
+}
+
+.contact-list {
+	display: grid;
+	gap: 0.6rem;
+	justify-items: start;
+}
+
+.contact-list .contact-line--big {
+	margin-top: 0;
+}
+
+.contact-list__note {
+	margin: -0.25rem 0 0.5rem;
+	font-size: var(--fs-sm);
+	color: var(--c-text-muted);
+}
+
 .contact-line--big {
 	margin-top: 0.5rem;
 	font-family: var(--ff-heading);
-	font-size: 1.75rem;
+	font-size: clamp(1.375rem, 1.2rem + 0.8vw, 1.75rem);
 	font-weight: 700;
 	color: var(--c-forest);
 }
