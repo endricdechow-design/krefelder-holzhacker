@@ -19,7 +19,7 @@ define( 'HOLZHACKER_VERSION', '1.0.0' );
 function holzhacker_business() {
 	return array(
 		'name'        => 'Krefelder Holzhacker',
-		'owners'      => 'Aron & Peter',
+		'owners'      => 'Aaron & Peter',
 		'street'      => 'Musterstraße 1',
 		'zip'         => '47798',
 		'city'        => 'Krefeld',

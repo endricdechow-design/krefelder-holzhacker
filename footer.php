@@ -41,7 +41,7 @@ $holzhacker_priv  = get_privacy_policy_url();
 
 	<div class="site-footer__bottom">
 		<div class="container site-footer__bottom-inner">
-			<p>&copy; <?php echo esc_html( gmdate( 'Y' ) ); ?> Krefelder Holzhacker – Aron &amp; Peter</p>
+			<p>&copy; <?php echo esc_html( gmdate( 'Y' ) ); ?> Krefelder Holzhacker – Aaron &amp; Peter</p>
 			<nav aria-label="<?php esc_attr_e( 'Rechtliches', 'holzhacker' ); ?>">
 				<?php if ( has_nav_menu( 'legal' ) ) : ?>
 					<?php

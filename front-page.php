@@ -58,7 +58,7 @@ $holzhacker_privacy = get_privacy_policy_url() ? get_privacy_policy_url() : home
 			<div class="about__text">
 				<p class="section__eyebrow">Über uns</p>
 				<h2 id="about-title" class="section__title">Zwei Krefelder mit Leidenschaft für Bäume</h2>
-				<p class="lead">Wir sind Aron und Peter aus Krefeld. Mit langjähriger Erfahrung, moderner Ausrüstung und Leidenschaft stehen wir Ihnen als verlässliche Partner zur Seite. Ihre grünen Begleiter sind bei uns in den besten Händen!</p>
+				<p class="lead">Wir sind Aaron und Peter aus Krefeld. Mit langjähriger Erfahrung, moderner Ausrüstung und Leidenschaft stehen wir Ihnen als verlässliche Partner zur Seite. Ihre grünen Begleiter sind bei uns in den besten Händen!</p>
 				<ul class="checklist">
 					<li>Persönliche Beratung vor Ort</li>
 					<li>Transparente Festpreise</li>
@@ -109,7 +109,7 @@ $holzhacker_privacy = get_privacy_policy_url() ? get_privacy_policy_url() : home
 				<h2 id="certs-title" class="section__title">Geprüfte Sicherheit und zertifizierte Baumpflege.</h2>
 			</header>
 
-			<!-- TODO: Scheine und Zulassungen von Aron und Peter eintragen -->
+			<!-- TODO: Scheine und Zulassungen von Aaron und Peter eintragen -->
 			<ul class="certs">
 				<li class="cert">
 					<div class="cert__icon"><?php echo holzhacker_icon( 'shield' ); // phpcs:ignore ?></div>
