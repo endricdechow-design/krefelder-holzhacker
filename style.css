@@ -752,41 +752,15 @@ body.nav-open .site-nav {
    ========================================================================== */
 
 .about {
-	display: grid;
-	gap: 2.5rem;
-	align-items: center;
-}
-
-.about__media {
-	position: relative;
-	max-width: 28rem;
-}
-
-.about__media::after {
-	content: "";
-	position: absolute;
-	inset: 1.25rem -1.25rem -1.25rem 1.25rem;
-	z-index: -1;
-	border: 3px solid var(--c-wood);
-	border-radius: var(--radius-lg);
-}
-
-.about__media {
-	isolation: isolate;
-}
-
-.about__img {
-	width: 100%;
-	aspect-ratio: 4 / 5;
-	object-fit: cover;
-	border-radius: var(--radius-lg);
-	box-shadow: var(--shadow-lg);
+	max-width: 48rem;
+	text-align: center;
 }
 
 .checklist {
-	display: grid;
+	display: inline-grid;
 	gap: 0.6rem;
 	margin: 1.5rem 0 0;
+	text-align: left;
 	padding: 0;
 	list-style: none;
 }
@@ -806,13 +780,6 @@ body.nav-open .site-nav {
 	height: 1.3rem;
 	border-radius: 50%;
 	background: var(--c-forest) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23e2a03f' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 12 4 4 8-8'/%3E%3C/svg%3E") center / 70% no-repeat;
-}
-
-@media (min-width: 48em) {
-	.about {
-		grid-template-columns: 5fr 7fr;
-		gap: 4rem;
-	}
 }
 
 /* ==========================================================================
@@ -951,6 +918,10 @@ body.nav-open .site-nav {
 	grid-template-columns: repeat(2, 1fr);
 	gap: 0.75rem;
 	margin-bottom: 4rem;
+}
+
+.gallery__item:first-child {
+	grid-column: span 2;
 }
 
 .gallery__item {

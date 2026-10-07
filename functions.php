@@ -277,19 +277,27 @@ add_action( 'admin_post_holzhacker_contact', 'holzhacker_handle_contact' );
  */
 function holzhacker_photos() {
 	return array(
-		'hero'    => array(
+		'bild1' => array(
 			'file' => '2026/10/WhatsApp-Image-2024-06-10-at-20.18.54.jpeg',
-			'alt'  => 'Krefelder Holzhacker bei der Baumarbeit',
+			'alt'  => 'Baumpfleger mit Klettergeschirr in der Baumkrone',
 		),
-		'about'   => array(
+		'bild2' => array(
 			'file' => '2026/10/WhatsApp-Image-2024-06-10-at-20.18.34.jpeg',
-			'alt'  => 'Aron und Peter von den Krefelder Holzhackern im Einsatz',
+			'alt'  => 'Einsatz der Krefelder Holzhacker',
 		),
-		'project' => array(
+		'bild3' => array(
 			'file' => '2026/10/WhatsApp-Image-2024-06-10-at-20.17.49.jpeg',
 			'alt'  => 'Projekt der Krefelder Holzhacker: Baumpflege in Krefeld',
 		),
 	);
+}
+
+/**
+ * Reihenfolge der Fotos im Referenzen-Grid. Das erste Bild wird groß dargestellt.
+ * Neue Fotos: in holzhacker_photos() eintragen und hier ergänzen.
+ */
+function holzhacker_reference_photos() {
+	return array( 'bild3', 'bild2', 'bild1' );
 }
 
 /**

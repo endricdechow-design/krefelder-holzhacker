@@ -27,7 +27,7 @@ $holzhacker_privacy = get_privacy_policy_url() ? get_privacy_policy_url() : home
 		<div class="hero__bg" aria-hidden="true">
 			<?php
 			echo holzhacker_photo( // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-				'hero',
+				'bild1',
 				'full',
 				array(
 					'class'         => 'hero__img',
@@ -55,9 +55,6 @@ $holzhacker_privacy = get_privacy_policy_url() ? get_privacy_policy_url() : home
 	<!-- ========== ÜBER UNS ========== -->
 	<section id="ueber-uns" class="section section--light" aria-labelledby="about-title">
 		<div class="container about">
-			<div class="about__media">
-				<?php echo holzhacker_photo( 'about', 'large', array( 'class' => 'about__img' ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
-			</div>
 			<div class="about__text">
 				<p class="section__eyebrow">Über uns</p>
 				<h2 id="about-title" class="section__title">Zwei Krefelder mit Leidenschaft für Bäume</h2>
@@ -147,18 +144,11 @@ $holzhacker_privacy = get_privacy_policy_url() ? get_privacy_policy_url() : home
 			</header>
 
 			<div class="gallery">
-				<?php for ( $holzhacker_i = 1; $holzhacker_i <= 6; $holzhacker_i++ ) : ?>
+				<?php foreach ( holzhacker_reference_photos() as $holzhacker_photo_key ) : ?>
 					<figure class="gallery__item">
-						<?php if ( 1 === $holzhacker_i ) : ?>
-							<?php echo holzhacker_photo( 'project', 'large', array( 'class' => 'gallery__img' ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
-						<?php else : ?>
-						<div class="placeholder" role="img" aria-label="<?php echo esc_attr( sprintf( 'Platzhalter: Projektbild %d', $holzhacker_i ) ); ?>">
-							<?php echo holzhacker_icon( 'image' ); // phpcs:ignore ?>
-							<span>Projekt <?php echo (int) $holzhacker_i; ?></span>
-						</div>
-						<?php endif; ?>
+						<?php echo holzhacker_photo( $holzhacker_photo_key, 'large', array( 'class' => 'gallery__img' ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 					</figure>
-				<?php endfor; ?>
+				<?php endforeach; ?>
 			</div>
 
 			<div class="reviews" id="google-bewertungen">
