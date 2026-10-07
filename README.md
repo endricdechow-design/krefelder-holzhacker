@@ -19,7 +19,7 @@ Repository als Ordner `holzhacker` nach `wp-content/themes/` kopieren/klonen, Th
 
 ## TODO
 - Echte Firmendaten in `holzhacker_business()` (`functions.php`) eintragen
-- Wald-Aquarell in `.hero__bg` (`style.css`) hinterlegen
-- Zertifikate, Projektbilder und Google-Bewertungen ergänzen
+- Fotos werden zentral in `holzhacker_photos()` (`functions.php`) gepflegt
+- Zertifikate, weitere Projektbilder (Referenzen 2–6) und Google-Bewertungen ergänzen
 - Seiten „Impressum“ (Slug `impressum`) und Datenschutz anlegen
 - Für zuverlässigen Mailversand ein SMTP-Plugin einrichten

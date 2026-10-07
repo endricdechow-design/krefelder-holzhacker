@@ -648,9 +648,8 @@ body.nav-open .site-nav {
 }
 
 /*
- * Platzhalter für das Wald-Aquarell.
- * Später einfach ersetzen durch:
- * background-image: url("assets/img/wald-aquarell.webp");
+ * Hero-Hintergrund: Foto (.hero__img) mit grünem Verlauf als Fallback,
+ * solange das Bild lädt.
  */
 .hero__bg {
 	position: absolute;
@@ -682,6 +681,16 @@ body.nav-open .site-nav {
 	height: 45%;
 	opacity: 0.55;
 	background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 120' preserveAspectRatio='none'%3E%3Cpath fill='%23142a1d' d='M0 120V80l15-30 15 30 10-50 12 50 18-40 14 40 10-60 14 60 16-35 12 35 14-55 14 55 12-30 10 30 16-45 14 45 12-60 14 60 14-35 12 35 16-50 14 50 10-30 14 30 12-45 14 45 16-25 10 25V120z'/%3E%3C/svg%3E") bottom / 100% 100% no-repeat;
+}
+
+.hero__img {
+	position: absolute;
+	inset: 0;
+	z-index: -1;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	object-position: center;
 }
 
 .hero__content {
@@ -764,6 +773,14 @@ body.nav-open .site-nav {
 
 .about__media {
 	isolation: isolate;
+}
+
+.about__img {
+	width: 100%;
+	aspect-ratio: 4 / 5;
+	object-fit: cover;
+	border-radius: var(--radius-lg);
+	box-shadow: var(--shadow-lg);
 }
 
 .checklist {
@@ -947,7 +964,17 @@ body.nav-open .site-nav {
 	transition: transform 0.4s var(--ease);
 }
 
-.gallery__item:hover .placeholder {
+.gallery__img {
+	width: 100%;
+	height: 100%;
+	aspect-ratio: 1;
+	object-fit: cover;
+	background: var(--c-border);
+	transition: transform 0.4s var(--ease);
+}
+
+.gallery__item:hover .placeholder,
+.gallery__item:hover .gallery__img {
 	transform: scale(1.03);
 }
 

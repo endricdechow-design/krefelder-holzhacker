@@ -272,6 +272,65 @@ add_action( 'admin_post_nopriv_holzhacker_contact', 'holzhacker_handle_contact' 
 add_action( 'admin_post_holzhacker_contact', 'holzhacker_handle_contact' );
 
 /**
+ * Fotos aus der Mediathek, die fest im One-Pager verwendet werden.
+ * Pfade relativ zum Upload-Ordner, damit es auch auf Staging-Domains läuft.
+ */
+function holzhacker_photos() {
+	return array(
+		'hero'    => array(
+			'file' => '2026/10/WhatsApp-Image-2024-06-10-at-20.18.54.jpeg',
+			'alt'  => 'Krefelder Holzhacker bei der Baumarbeit',
+		),
+		'about'   => array(
+			'file' => '2026/10/WhatsApp-Image-2024-06-10-at-20.18.34.jpeg',
+			'alt'  => 'Aron und Peter von den Krefelder Holzhackern im Einsatz',
+		),
+		'project' => array(
+			'file' => '2026/10/WhatsApp-Image-2024-06-10-at-20.17.49.jpeg',
+			'alt'  => 'Projekt der Krefelder Holzhacker: Baumpflege in Krefeld',
+		),
+	);
+}
+
+/**
+ * Gibt ein Foto aus der Mediathek aus. Ist das Bild als Anhang registriert,
+ * nutzt WordPress srcset/sizes (responsive Bildgrößen), sonst einfacher <img>-Tag.
+ *
+ * @param string $key   Schlüssel aus holzhacker_photos().
+ * @param string $size  Bildgröße (z. B. 'large', 'full').
+ * @param array  $attr  Zusätzliche Attribute für das <img>-Tag.
+ * @return string HTML.
+ */
+function holzhacker_photo( $key, $size = 'large', $attr = array() ) {
+	$photos = holzhacker_photos();
+	if ( ! isset( $photos[ $key ] ) ) {
+		return '';
+	}
+
+	$uploads = wp_get_upload_dir();
+	$url     = trailingslashit( $uploads['baseurl'] ) . $photos[ $key ]['file'];
+	$attr    = array_merge(
+		array(
+			'alt'      => $photos[ $key ]['alt'],
+			'loading'  => 'lazy',
+			'decoding' => 'async',
+		),
+		$attr
+	);
+
+	$attachment_id = attachment_url_to_postid( $url );
+	if ( $attachment_id ) {
+		return wp_get_attachment_image( $attachment_id, $size, false, $attr );
+	}
+
+	$html = '<img src="' . esc_url( $url ) . '"';
+	foreach ( $attr as $name => $value ) {
+		$html .= ' ' . esc_attr( $name ) . '="' . esc_attr( $value ) . '"';
+	}
+	return $html . '>';
+}
+
+/**
  * Inline-SVG-Icons.
  *
  * @param string $name Icon-Name.

@@ -25,7 +25,19 @@ $holzhacker_privacy = get_privacy_policy_url() ? get_privacy_policy_url() : home
 	<!-- ========== HERO ========== -->
 	<section id="home" class="hero" aria-labelledby="hero-title">
 		<div class="hero__bg" aria-hidden="true">
-			<!-- Platzhalter für Wald-Aquarell: Bild als CSS-Hintergrund in .hero__bg hinterlegen -->
+			<?php
+			echo holzhacker_photo( // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+				'hero',
+				'full',
+				array(
+					'class'         => 'hero__img',
+					'alt'           => '',
+					'loading'       => 'eager',
+					'fetchpriority' => 'high',
+					'sizes'         => '100vw',
+				)
+			);
+			?>
 		</div>
 		<div class="container hero__content">
 			<p class="hero__eyebrow"><?php esc_html_e( 'Ihr Baumdienst in Krefeld & Umgebung', 'holzhacker' ); ?></p>
@@ -44,10 +56,7 @@ $holzhacker_privacy = get_privacy_policy_url() ? get_privacy_policy_url() : home
 	<section id="ueber-uns" class="section section--light" aria-labelledby="about-title">
 		<div class="container about">
 			<div class="about__media">
-				<div class="placeholder placeholder--portrait" role="img" aria-label="<?php esc_attr_e( 'Platzhalter: Foto von Aron und Peter', 'holzhacker' ); ?>">
-					<?php echo holzhacker_icon( 'image' ); // phpcs:ignore ?>
-					<span>Foto Aron &amp; Peter</span>
-				</div>
+				<?php echo holzhacker_photo( 'about', 'large', array( 'class' => 'about__img' ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 			</div>
 			<div class="about__text">
 				<p class="section__eyebrow">Über uns</p>
@@ -140,10 +149,14 @@ $holzhacker_privacy = get_privacy_policy_url() ? get_privacy_policy_url() : home
 			<div class="gallery">
 				<?php for ( $holzhacker_i = 1; $holzhacker_i <= 6; $holzhacker_i++ ) : ?>
 					<figure class="gallery__item">
+						<?php if ( 1 === $holzhacker_i ) : ?>
+							<?php echo holzhacker_photo( 'project', 'large', array( 'class' => 'gallery__img' ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+						<?php else : ?>
 						<div class="placeholder" role="img" aria-label="<?php echo esc_attr( sprintf( 'Platzhalter: Projektbild %d', $holzhacker_i ) ); ?>">
 							<?php echo holzhacker_icon( 'image' ); // phpcs:ignore ?>
 							<span>Projekt <?php echo (int) $holzhacker_i; ?></span>
 						</div>
+						<?php endif; ?>
 					</figure>
 				<?php endfor; ?>
 			</div>
